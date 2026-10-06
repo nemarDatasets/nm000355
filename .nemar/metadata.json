@@ -1,6 +1,11 @@
 {
   "version": "2.0",
   "pipeline_stage": "validated",
+  "title": "Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): authors' preprocessed ECoG+SEEG epochs",
+  "description": "A BIDS packaging of the authors' preprocessed intracranial EEG epochs from the FieldTrip human intracranial analysis protocol (Stolk et al., 2018). It contains 26 tone-locked epochs of 152 ECoG and SEEG channels sampled at 5000 Hz from one epilepsy patient (SubjectUCI29) performing an auditory target detection task. The data are derivative, with demeaning, 200 Hz low-pass and line-noise band-stop filtering already applied. Raw recordings were not released by the authors.",
+  "methods_description": "Recordings were acquired with a Nihon Kohden JE-120A amplifier at 5 kHz with an analog high-pass above 0.01 Hz, from 96 ECoG contacts (parietal and temporal grids) and 56 SEEG contacts on 7 depth leads. Trials were cut from -0.4 to 0.9 s around tone onset, demeaned, low-pass filtered at 200 Hz and band-stop filtered at 59-61, 119-121 and 179-181 Hz using FieldTrip ft_preprocessing.",
+  "license": "CC-BY-SA-4.0",
+  "dataset_type": "derivative",
   "authors": {
     "Arjen Stolk": {
       "orcid": "0000-0003-3798-4923",
@@ -31,6 +36,30 @@
       ]
     }
   },
+  "keywords": [
+    {
+      "term": "intracranial EEG"
+    },
+    {
+      "term": "Electrocorticography",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D000069280"
+    },
+    {
+      "term": "stereoelectroencephalography"
+    },
+    {
+      "term": "Epilepsy",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D004827"
+    },
+    {
+      "term": "auditory target detection"
+    },
+    {
+      "term": "FieldTrip"
+    }
+  ],
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.1201560",
@@ -60,24 +89,42 @@
   ],
   "funding_references": [
     {
-      "funder_name": "European Commission H2020",
-      "award_number": "641652",
-      "award_title": "ChildBrain"
+      "funder_name": "EC Marie Curie Actions H2020-MSCA-ITN-2014 (R.O.)"
     },
     {
-      "funder_name": "European Commission H2020",
+      "funder_name": "European Commission",
+      "award_number": "641652",
+      "award_title": "ChildBrain (H2020)"
+    },
+    {
+      "funder_name": "European Commission",
       "award_number": "658868",
-      "award_title": "MUSIC"
+      "award_title": "MUSIC (H2020)"
+    },
+    {
+      "funder_name": "NWO",
+      "award_number": "446-14-007",
+      "award_title": "Rubicon"
+    },
+    {
+      "funder_name": "NIMH",
+      "award_number": "R01 MH095984-03S1"
+    },
+    {
+      "funder_name": "NWO",
+      "award_number": "864-14-011",
+      "award_title": "VIDI"
+    },
+    {
+      "funder_name": "NINDS",
+      "award_number": "R37NS21135"
     }
   ],
-  "title": "Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): authors' preprocessed ECoG+SEEG epochs",
-  "license": "CC-BY-SA-4.0",
-  "dataset_type": "derivative",
   "resource_type_general": "Dataset",
+  "resource_type_specific": "iEEG Dataset",
   "modalities": [
     "ieeg"
   ],
-  "resource_type_specific": "iEEG Dataset",
   "sizes": [
     "295 MB (8 files)"
   ],
@@ -90,36 +137,8 @@
     ".tsv",
     ".vhdr",
     ".vmrk",
-    ".xlsx"
+    ".xlsx",
+    ".yml"
   ],
-  "description": "A BIDS-packaged derivative of the preprocessed intracranial EEG (ECoG and SEEG) released with the FieldTrip human intracranial analysis protocol by Stolk et al. (2018). It contains 26 epochs of 152 channels sampled at 5000 Hz from one patient with medication-refractory epilepsy performing an auditory target-detection task, aligned to tone onset. Raw recordings were not shared by the authors. Electrode coordinates in several spaces and the authors' non-imaging source files are included.",
-  "methods_description": "One adult epilepsy patient with 56 SEEG contacts on 7 depth leads and 96 ECoG contacts on two grids pressed a button on hearing a target tone. Trials were cut from -0.4 to 0.9 s around tone onset, demeaned, low-pass filtered at 200 Hz, and band-stop filtered around 60, 120 and 180 Hz using FieldTrip. Epochs were stored back to back in a BrainVision float32 file.",
-  "keywords": [
-    {
-      "term": "iEEG"
-    },
-    {
-      "term": "ECoG"
-    },
-    {
-      "term": "SEEG"
-    },
-    {
-      "term": "Electrocorticography",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D000069280"
-    },
-    {
-      "term": "auditory target detection"
-    },
-    {
-      "term": "FieldTrip"
-    },
-    {
-      "term": "Epilepsy",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D004827"
-    }
-  ],
-  "source_hash": "b5c555ccbbfb0d3d91ef6f24e2d08ecc8f09ef08af7ff90723070061e3ee35bd"
+  "source_hash": "df6d8947ac98c167b0b3893d99eafe6fcde6b01913f330538e6be94001a6ebbf"
 }
