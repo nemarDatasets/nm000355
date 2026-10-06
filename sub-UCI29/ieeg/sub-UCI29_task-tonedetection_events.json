@@ -1,0 +1,35 @@
+{
+  "onset": {
+    "Description": "Seconds from the start of this file. The file holds the 26 authors' epochs back to back (RecordingType = epoched, EpochLength = 1.3004 s); onsets are NOT times in the original continuous recording, which is not shared.",
+    "Units": "s"
+  },
+  "sample": {
+    "Description": "0-based sample index in this file."
+  },
+  "trial_type": {
+    "Description": "Row type.",
+    "Levels": {
+      "epoch": "One authors' epoch (-0.4 to 0.9002 s around tone onset, 6502 samples)",
+      "tone": "Tone onset (FieldTrip trialdef eventtype TRIGGER, eventvalue 4); time 0 of the epoch"
+    }
+  },
+  "value": {
+    "Description": "Trigger value defining the trials (4) for tone rows."
+  },
+  "epoch": {
+    "Description": "Index of the epoch in the authors' FieldTrip data structure (1-based, data.trial order)."
+  },
+  "epoch_time_of_onset": {
+    "Description": "Time of this row relative to tone onset, from the authors' data.time axis.",
+    "Units": "s"
+  },
+  "trialinfo": {
+    "Description": "data.trialinfo value for this trial, as stored by the authors. Its meaning is not documented in the release (the protocol mentions an approximate button-press time of ~700 ms after the tone)."
+  },
+  "sampleinfo_begsample": {
+    "Description": "For epoch rows: data.sampleinfo begin sample (1-based) of the epoch in the original, unshared recording file. For tone rows: begin sample + 2000, i.e. the tone sample in the original recording."
+  },
+  "sampleinfo_endsample": {
+    "Description": "data.sampleinfo end sample (1-based) of the epoch in the original, unshared recording file."
+  }
+}

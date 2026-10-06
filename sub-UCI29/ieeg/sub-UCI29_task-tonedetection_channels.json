@@ -1,0 +1,15 @@
+{
+  "units": {
+    "Description": "Unit label assigned by this packaging. The FieldTrip data structure carries no unit field (its elec.chanunit says \"V\", a FieldTrip sensor default). The stored amplitudes (median |x| = 49, max |x| = 1398) are only plausible as microvolts, so µV is used; the numerical values are exactly the authors' stored values."
+  },
+  "high_cutoff": {
+    "Description": "Low-pass filter applied by the authors (FieldTrip ft_preprocessing lpfilter, lpfreq = 200 Hz).",
+    "Units": "Hz"
+  },
+  "notch": {
+    "Description": "The authors applied band-stop filters at 59-61, 119-121 and 179-181 Hz (bsfiltord = 3); see SoftwareFilters in the _ieeg.json."
+  },
+  "group": {
+    "Description": "Electrode lead / grid name (label prefix): RAM/LAM amygdala depths, RHH/LHH hippocampal head depths, RTH/LTH hippocampal tail depths, ROC right occipital depth, LPG left parietal grid (64), LTG left temporal grid (32)."
+  }
+}

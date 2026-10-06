@@ -1,0 +1,59 @@
+Brain Vision Data Exchange Marker File, Version 1.0
+[Common Infos]
+Codepage=UTF-8
+DataFile=sub-UCI29_task-tonedetection_ieeg.eeg
+
+[Marker Infos]
+; Each entry: Mk<Marker number>=<Type>,<Description>,<Position in data points>,<Size in data points>,<Channel number (0 = marker is related to all channels)>
+Mk1=New Segment,,1,1,0
+Mk2=Stimulus,S  4,2001,1,0
+Mk3=New Segment,,6503,1,0
+Mk4=Stimulus,S  4,8503,1,0
+Mk5=New Segment,,13005,1,0
+Mk6=Stimulus,S  4,15005,1,0
+Mk7=New Segment,,19507,1,0
+Mk8=Stimulus,S  4,21507,1,0
+Mk9=New Segment,,26009,1,0
+Mk10=Stimulus,S  4,28009,1,0
+Mk11=New Segment,,32511,1,0
+Mk12=Stimulus,S  4,34511,1,0
+Mk13=New Segment,,39013,1,0
+Mk14=Stimulus,S  4,41013,1,0
+Mk15=New Segment,,45515,1,0
+Mk16=Stimulus,S  4,47515,1,0
+Mk17=New Segment,,52017,1,0
+Mk18=Stimulus,S  4,54017,1,0
+Mk19=New Segment,,58519,1,0
+Mk20=Stimulus,S  4,60519,1,0
+Mk21=New Segment,,65021,1,0
+Mk22=Stimulus,S  4,67021,1,0
+Mk23=New Segment,,71523,1,0
+Mk24=Stimulus,S  4,73523,1,0
+Mk25=New Segment,,78025,1,0
+Mk26=Stimulus,S  4,80025,1,0
+Mk27=New Segment,,84527,1,0
+Mk28=Stimulus,S  4,86527,1,0
+Mk29=New Segment,,91029,1,0
+Mk30=Stimulus,S  4,93029,1,0
+Mk31=New Segment,,97531,1,0
+Mk32=Stimulus,S  4,99531,1,0
+Mk33=New Segment,,104033,1,0
+Mk34=Stimulus,S  4,106033,1,0
+Mk35=New Segment,,110535,1,0
+Mk36=Stimulus,S  4,112535,1,0
+Mk37=New Segment,,117037,1,0
+Mk38=Stimulus,S  4,119037,1,0
+Mk39=New Segment,,123539,1,0
+Mk40=Stimulus,S  4,125539,1,0
+Mk41=New Segment,,130041,1,0
+Mk42=Stimulus,S  4,132041,1,0
+Mk43=New Segment,,136543,1,0
+Mk44=Stimulus,S  4,138543,1,0
+Mk45=New Segment,,143045,1,0
+Mk46=Stimulus,S  4,145045,1,0
+Mk47=New Segment,,149547,1,0
+Mk48=Stimulus,S  4,151547,1,0
+Mk49=New Segment,,156049,1,0
+Mk50=Stimulus,S  4,158049,1,0
+Mk51=New Segment,,162551,1,0
+Mk52=Stimulus,S  4,164551,1,0

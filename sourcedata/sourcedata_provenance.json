@@ -1,0 +1,87 @@
+{
+  "copied": [
+    {
+      "file": "SubjectUCI29_data.mat",
+      "bytes": 197274429,
+      "sha256": "63ca18f37a83ac0d95fbd9f42637467541e05be29d1a6ad8e07626347ee532b8"
+    },
+    {
+      "file": "SubjectUCI29_elec_acpc_f.mat",
+      "bytes": 47350,
+      "sha256": "6eaee2b83db3f1d38285ca45db3234eb284ae14d2979c7161014dcc01ca08438"
+    },
+    {
+      "file": "SubjectUCI29_elec_acpc_fr.mat",
+      "bytes": 53399,
+      "sha256": "4d0d3d0beb6cad909f306169627fd6fb4f558c494db4c11c5130b460ad2a349f"
+    },
+    {
+      "file": "SubjectUCI29_elec_fsavg_frs.mat",
+      "bytes": 116706,
+      "sha256": "cbc00e3b68aaa2770c9b607a88765c36ed7f5d265724f2b01ebd1d4dd93fba85"
+    },
+    {
+      "file": "SubjectUCI29_elec_mni_frv.mat",
+      "bytes": 53963,
+      "sha256": "1d84d585f4ac376f6bc84970adcb713ee482b44c98a34fe04ac4c85497b0e4b5"
+    },
+    {
+      "file": "SubjectUCI29_electable.xlsx",
+      "bytes": 16076,
+      "sha256": "c68e1cd6ec881a0c7a6e58c3a10371ee1af11f544a3e1c31912e387cd384523f"
+    },
+    {
+      "file": "SubjectUCI29_freq.mat",
+      "bytes": 5332001,
+      "sha256": "92fd459c91438f029671f1f7c860d99cd3fced7a11cc5807c26f9cce9ab93ab2"
+    },
+    {
+      "file": "SubjectUCI29_grids.png",
+      "bytes": 2790315,
+      "sha256": "47e245785b1761c3cb7050d88c9bb5f1f3407159130f8248ea6941a5efeed2e6"
+    },
+    {
+      "file": "SubjectUCI29_hdr.mat",
+      "bytes": 765,
+      "sha256": "f36f3c72f31a47844589743a527223f47ae51585613535a58dfa241ad0f438a5"
+    },
+    {
+      "file": "SubjectUCI29_hull_lh.mat",
+      "bytes": 1177264,
+      "sha256": "673fd5710c7a359abc2a8a057069f7019463519e557b02f2b91c2af3a3abd68f"
+    }
+  ],
+  "withheld_from_public_package": [
+    {
+      "file": "SubjectUCI29_CT_acpc_f.nii",
+      "bytes": 104333664,
+      "reason": "Head imaging (MRI/CT volume, FreeSurfer subject directory with T1/orig/rawavg head volumes, or a CT/MRI overlay figure showing a sagittal head profile). The authors state the imaging was defaced with ft_defacevolume, and rectangular defacing masks are visible in our renders, but no independent full-resolution identifiability review was done, so the imaging is not redistributed here. It remains available from the authors' Zenodo record 1201560."
+    },
+    {
+      "file": "SubjectUCI29_CT_acpc_f.png",
+      "bytes": 187370,
+      "reason": "Head imaging (MRI/CT volume, FreeSurfer subject directory with T1/orig/rawavg head volumes, or a CT/MRI overlay figure showing a sagittal head profile). The authors state the imaging was defaced with ft_defacevolume, and rectangular defacing masks are visible in our renders, but no independent full-resolution identifiability review was done, so the imaging is not redistributed here. It remains available from the authors' Zenodo record 1201560."
+    },
+    {
+      "file": "SubjectUCI29_MR_acpc.nii",
+      "bytes": 23069024,
+      "reason": "Head imaging (MRI/CT volume, FreeSurfer subject directory with T1/orig/rawavg head volumes, or a CT/MRI overlay figure showing a sagittal head profile). The authors state the imaging was defaced with ft_defacevolume, and rectangular defacing masks are visible in our renders, but no independent full-resolution identifiability review was done, so the imaging is not redistributed here. It remains available from the authors' Zenodo record 1201560."
+    },
+    {
+      "file": "SubjectUCI29_postimpl_MR_acpc_f.nii",
+      "bytes": 23069024,
+      "reason": "Head imaging (MRI/CT volume, FreeSurfer subject directory with T1/orig/rawavg head volumes, or a CT/MRI overlay figure showing a sagittal head profile). The authors state the imaging was defaced with ft_defacevolume, and rectangular defacing masks are visible in our renders, but no independent full-resolution identifiability review was done, so the imaging is not redistributed here. It remains available from the authors' Zenodo record 1201560."
+    },
+    {
+      "file": "freesurfer.zip",
+      "bytes": 214580946,
+      "reason": "Head imaging (MRI/CT volume, FreeSurfer subject directory with T1/orig/rawavg head volumes, or a CT/MRI overlay figure showing a sagittal head profile). The authors state the imaging was defaced with ft_defacevolume, and rectangular defacing masks are visible in our renders, but no independent full-resolution identifiability review was done, so the imaging is not redistributed here. It remains available from the authors' Zenodo record 1201560."
+    }
+  ],
+  "source": "https://zenodo.org/records/1201560",
+  "doi": "10.5281/zenodo.1201560",
+  "version": "v1.0",
+  "acquisition_receipt_summary": {
+    "complete": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "Name": "Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): authors' preprocessed ECoG+SEEG epochs",
+  "BIDSVersion": "1.10.0",
+  "DatasetType": "derivative",
+  "License": "CC-BY-SA-4.0",
+  "Authors": [
+    "Arjen Stolk",
+    "Sandon Griffin",
+    "Roemer van der Meij",
+    "Callum Dewar",
+    "Ignacio Saez",
+    "Jack J. Lin",
+    "Giovanni Piantoni",
+    "Jan-Mathijs Schoffelen",
+    "Robert T. Knight",
+    "Robert Oostenveld"
+  ],
+  "HowToAcknowledge": "Cite Stolk A, Griffin S, van der Meij R, et al. (2018) Integrated analysis of anatomical and electrophysiological human intracranial data. Nature Protocols 13:1699-1723, doi:10.1038/s41596-018-0009-6, and the data record doi:10.5281/zenodo.1201560. Share adaptations under CC-BY-SA-4.0.",
+  "Funding": [
+    "European Commission H2020 grant 641652 (ChildBrain)",
+    "European Commission H2020 grant 658868 (MUSIC)"
+  ],
+  "EthicsApprovals": [
+    "Office for the Protection of Human Subjects, University of California, Berkeley; the subject gave informed consent (as stated by the authors)"
+  ],
+  "ReferencesAndLinks": [
+    "https://doi.org/10.5281/zenodo.1201560",
+    "https://doi.org/10.1038/s41596-018-0009-6",
+    "https://doi.org/10.1101/230912",
+    "https://www.fieldtriptoolbox.org/tutorial/intracranial/human_ecog/",
+    "https://hdl.handle.net/11633/di.dccn.DSC_3015000.00_734"
+  ],
+  "Keywords": [
+    "iEEG",
+    "ECoG",
+    "sEEG",
+    "epochs",
+    "preprocessed",
+    "derivative",
+    "auditory target detection",
+    "FieldTrip"
+  ],
+  "GeneratedBy": [
+    {
+      "Name": "FieldTrip ft_preprocessing (authors' preprocessing)",
+      "Description": "Stolk et al. 2018 protocol steps 35-36: trials defined from trigger value 4 (-0.4 to 0.9 s), demeaned over the whole trial, low-pass 200 Hz, band-stop 59-61/119-121/179-181 Hz (order 3), 2 s data padding. Performed by the authors before release; the raw recording was not shared.",
+      "CodeURL": "https://www.fieldtriptoolbox.org/tutorial/intracranial/human_ecog/"
+    },
+    {
+      "Name": "laneD_convert.py",
+      "Description": "BIDS packaging only (no signal processing): the 26 stored epochs are written back to back to one BrainVision float32 file (RecordingType epoched); channel, event, electrode and coordinate metadata are transcribed from the authors' FieldTrip structures; non-imaging source files copied byte-identically to sourcedata/."
+    }
+  ],
+  "SourceDatasets": [
+    {
+      "DOI": "doi:10.5281/zenodo.1201560",
+      "URL": "https://zenodo.org/records/1201560",
+      "Version": "v1.0"
+    }
+  ]
+}

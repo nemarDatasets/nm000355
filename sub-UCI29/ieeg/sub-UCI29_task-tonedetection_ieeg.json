@@ -1,0 +1,31 @@
+{
+  "TaskName": "tonedetection",
+  "TaskDescription": "Auditory target detection: the patient pressed a button with the right hand when hearing a target tone. Segments are aligned to tone onset (trigger value 4 in the recording).",
+  "InstitutionName": "University of California, Irvine Medical Center (recording site)",
+  "SamplingFrequency": 5000.0,
+  "PowerLineFrequency": 60,
+  "SoftwareFilters": {
+    "FieldTrip ft_preprocessing (authors, protocol step 36)": {
+      "demean": "yes, baselinewindow = all (per trial)",
+      "lpfilter": "lpfreq = 200 Hz",
+      "bsfilter": "bsfreq = [59 61; 119 121; 179 181] Hz, bsfiltord = 3",
+      "padding": "2 s, padtype = data"
+    }
+  },
+  "HardwareFilters": "n/a",
+  "iEEGReference": "Not documented in the shared data. The signals are as imported from the recording before the protocol's re-montage steps (common average for grids, bipolar for depths, steps 41-42), which were NOT applied to these data.",
+  "ECOGChannelCount": 96,
+  "SEEGChannelCount": 56,
+  "EEGChannelCount": 0,
+  "EOGChannelCount": 0,
+  "ECGChannelCount": 0,
+  "EMGChannelCount": 0,
+  "MiscChannelCount": 0,
+  "TriggerChannelCount": 0,
+  "RecordingType": "epoched",
+  "EpochLength": 1.3004,
+  "RecordingDuration": 33.8104,
+  "iEEGGround": "n/a",
+  "iEEGPlacementScheme": "6 bilateral depth electrodes (amygdala, hippocampal head, hippocampal tail), 1 right occipital depth, left parietal 64-contact grid and left temporal 32-contact grid",
+  "ElectricalStimulation": false
+}

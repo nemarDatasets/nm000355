@@ -1,0 +1,54 @@
+{
+  "x": {
+    "Description": "elec_acpc_fr.elecpos x: ACPC position after CT-MRI fusion, with brain-shift compensation of the LPG/LTG grids (projection to the cortical hull, dykstra2012). These are the positions the authors stored in data.elec.",
+    "Units": "mm"
+  },
+  "y": {
+    "Description": "elec_acpc_fr.elecpos y (see x).",
+    "Units": "mm"
+  },
+  "z": {
+    "Description": "elec_acpc_fr.elecpos z (see x).",
+    "Units": "mm"
+  },
+  "x_acpc_f": {
+    "Description": "elec_acpc_f.elecpos x: ACPC position as localised in the fused CT (before brain-shift compensation).",
+    "Units": "mm"
+  },
+  "y_acpc_f": {
+    "Description": "elec_acpc_f.elecpos y.",
+    "Units": "mm"
+  },
+  "z_acpc_f": {
+    "Description": "elec_acpc_f.elecpos z.",
+    "Units": "mm"
+  },
+  "x_mni_frv": {
+    "Description": "elec_mni_frv.elecpos x: authors' volume-based normalisation to MNI space (FieldTrip ft_electroderealign method mni, SPM12 nonlinear). The exact MNI template variant is not stated in the release.",
+    "Units": "mm"
+  },
+  "y_mni_frv": {
+    "Description": "elec_mni_frv.elecpos y.",
+    "Units": "mm"
+  },
+  "z_mni_frv": {
+    "Description": "elec_mni_frv.elecpos z.",
+    "Units": "mm"
+  },
+  "x_fsavg_frs": {
+    "Description": "elec_fsavg_frs.elecpos x: authors' surface-based registration to FreeSurfer fsaverage (grid electrodes only; n/a for depths).",
+    "Units": "mm"
+  },
+  "y_fsavg_frs": {
+    "Description": "elec_fsavg_frs.elecpos y.",
+    "Units": "mm"
+  },
+  "z_fsavg_frs": {
+    "Description": "elec_fsavg_frs.elecpos z.",
+    "Units": "mm"
+  },
+  "group": {
+    "Description": "Lead / grid name (label prefix)."
+  },
+  "SpatialReference": "https://zenodo.org/records/1201560/files/SubjectUCI29_MR_acpc.nii (the authors' ACPC-aligned pre-implant T1 MRI; not redistributed in this package)"
+}

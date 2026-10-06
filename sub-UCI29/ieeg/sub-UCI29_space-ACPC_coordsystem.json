@@ -1,0 +1,7 @@
+{
+  "iEEGCoordinateSystem": "ACPC",
+  "iEEGCoordinateUnits": "mm",
+  "iEEGCoordinateSystemDescription": "Subject ACPC space as defined in the FieldTrip protocol: origin at the anterior commissure, Y axis along the AC-PC line, Z axis in the midline; pre-implant T1 MRI aligned interactively (ft_volumerealign).",
+  "iEEGCoordinateProcessingDescription": "Post-implant CT aligned to CTF then ACPC and fused with the pre-implant MRI (SPM12, rigid body); electrodes placed with ft_electrodeplacement; LPG/LTG grids projected to the cortical hull of the left pial surface to compensate brain shift (ft_electroderealign, warp dykstra2012).",
+  "iEEGCoordinateProcessingReference": "Stolk A, Griffin S, van der Meij R, et al. Integrated analysis of anatomical and electrophysiological human intracranial data. Nat Protoc 13, 1699-1723 (2018). doi:10.1038/s41596-018-0009-6"
+}
