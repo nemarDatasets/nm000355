@@ -1,5 +1,11 @@
 {
   "source_id": {
     "Description": "Subject identifier used in the Zenodo release and the FieldTrip protocol."
+  },
+  "n_ecog_electrodes": {
+    "Description": "Number of ECoG electrodes, Stolk et al. 2018 Nat Protoc 13:1699 doi:10.1038/s41596-018-0009-6 (PMC6548463): \"neural recordings from 96 ECoG and 56 SEEG electrodes that were implanted as part of the preparation for the epilepsy surgery\". Equals the ECOG rows of channels.tsv."
+  },
+  "n_seeg_electrodes": {
+    "Description": "Number of SEEG electrodes, same source. Equals the SEEG rows of channels.tsv."
   }
 }

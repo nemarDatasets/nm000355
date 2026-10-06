@@ -1,2 +1,2 @@
-participant_id	source_id
-sub-UCI29	SubjectUCI29
+participant_id	source_id	n_ecog_electrodes	n_seeg_electrodes
+sub-UCI29	SubjectUCI29	96	56
