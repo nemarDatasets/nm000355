@@ -2,6 +2,10 @@
   "units": {
     "Description": "Unit label assigned by this packaging. The FieldTrip data structure carries no unit field (its elec.chanunit says \"V\", a FieldTrip sensor default). The stored amplitudes (median |x| = 49, max |x| = 1398) are only plausible as microvolts, so µV is used; the numerical values are exactly the authors' stored values."
   },
+  "low_cutoff": {
+    "Description": "Hardware (analog) high-pass of the acquisition system: 'analogfiltered above 0.01 Hz' (Stolk et al. 2018, Materials). The authors' software preprocessing added no high-pass (demean per trial only).",
+    "Units": "Hz"
+  },
   "high_cutoff": {
     "Description": "Low-pass filter applied by the authors (FieldTrip ft_preprocessing lpfilter, lpfreq = 200 Hz).",
     "Units": "Hz"

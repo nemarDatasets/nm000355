@@ -1,5 +1,7 @@
 # Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): the authors' preprocessed epochs
 
+## Overview
+
 **These are not raw recordings.** This dataset is a BIDS packaging of the *preprocessed* intracranial EEG released
 with the FieldTrip human intracranial analysis protocol (Stolk et al., 2018, Nature Protocols). The authors did not share the
 raw recording: "Raw recording files are not shared, in order to protect the subject's identity." What they released, and
@@ -8,7 +10,7 @@ what is packaged here, is the output of protocol steps 35-36: 26 trials of 152 c
 179-181 Hz. `dataset_description.json` therefore declares `DatasetType: derivative`, with `GeneratedBy` and
 `SourceDatasets` pointing at the authors' Zenodo record (doi:10.5281/zenodo.1201560, v1.0, CC-BY-SA-4.0).
 
-## Recording and task
+## Cohort and recording
 
 - One adult patient with medication-refractory epilepsy (`sub-UCI29`, source ID `SubjectUCI29`), recorded at the
   University of California, Irvine Medical Center. Study approved by the Office for the Protection of Human Subjects of
@@ -19,6 +21,26 @@ what is packaged here, is the output of protocol steps 35-36: 26 trials of 152 c
   `SubjectUCI29_grids.png` in `sourcedata/` is the authors' schematic of the grid numbering.
 - Task: the patient pressed a button with the right hand on hearing a target tone. Trials are aligned to tone onset
   (trigger value 4).
+
+Additional acquisition details (Stolk et al. 2018, "Materials" and "Experimental design"; PMC6548463):
+
+- Implant: grids LPG (64 contacts, 8 x 8, left parietal) and LTG (32 contacts, 4 x 8, left temporal), Integra,
+  10 mm inter-electrode spacing; depth leads LAM, LHH, LTH, RAM, RHH, RTH and ROC, 8 contacts each, Ad-Tech, 5 mm
+  inter-electrode spacing. Implanted "as part of the preparation for the epilepsy surgery".
+- Amplifier: "All neural recordings were acquired using a Nihon Kohden recording system with a JE-120A amplifier
+  (Nihon Kohden Corporation, Tokyo, Japan), analogfiltered above 0.01 Hz, and digitally sampled at 5 KHz".
+- Reference: the acquisition reference electrode is not stated for this recording (see `iEEGReference`).
+- Anatomical imaging used by the authors (not redistributed here): pre-implant T1 MRI (Siemens 3T TrioTim),
+  post-implant CT (Philips iCT 256), post-implant T1 MRI (Siemens 1.5T Avanto).
+
+## Task / paradigm and timing
+
+"The neural data were recorded in the context of an experiment that required the patient to press a button with
+the right hand when hearing a target tone" (Stolk et al. 2018). The authors defined trials from trigger value 4
+(tone onset) in the recording's trigger channel, from 400 ms before to 900 ms after the tone (protocol step 34:
+`cfg.trialdef.eventvalue = 4; prestim = 0.4; poststim = 0.9`), giving the "experiment's twenty-six trials" (step 36).
+Button-press times are not in the release as events; the meaning of `trialinfo` is not documented (see
+`_events.json`).
 
 ## Files
 
@@ -44,13 +66,31 @@ what is packaged here, is the output of protocol steps 35-36: 26 trials of 152 c
   electrode structures, the electrode table, the time-frequency result `_freq.mat` (a further derivative computed after
   re-montage) and the left cortical hull mesh.
 
-## Precision
+## Preprocessing already applied by the source
+
+Protocol step 35 (Stolk et al. 2018), applied by the authors before release with FieldTrip `ft_preprocessing`:
+`cfg.demean = 'yes'; cfg.baselinewindow = 'all'; cfg.lpfilter = 'yes'; cfg.lpfreq = 200; cfg.padding = 2;
+cfg.padtype = 'data'; cfg.bsfilter = 'yes'; cfg.bsfiltord = 3; cfg.bsfreq = [59 61; 119 121; 179 181]`.
+The later protocol steps (bad-segment rejection, re-montage to common average for grids and bipolar for depths,
+time-frequency analysis) were not applied to the packaged signals; `SubjectUCI29_freq.mat` in `sourcedata/` is the
+authors' time-frequency result from those later steps. Hardware filtering: analog high-pass above 0.01 Hz
+(`low_cutoff` in `_channels.tsv`).
+
+## Known caveats
+
+- Not raw data: authors' preprocessed epochs only (see Overview).
+- Epochs are stored back to back; the file time axis is not the recording time axis (see Files).
+- Units (µV) are inferred from amplitudes, not stated by the source (see Files).
+- `trialinfo` is undocumented by the authors.
+- Head imaging is not redistributed (see "What is not included, and why").
+
+### Precision
 
 The source stores float64 and BrainVision float32. The largest absolute difference between the BrainVision samples and
 the source values is reported in the conversion summary. It is below 1e-4 µV, against a signal of tens of µV. For
 bit-exact values, use `sourcedata/zenodo-1201560/SubjectUCI29_data.mat`.
 
-## What is not included, and why
+### What is not included, and why
 
 The record's head imaging is not redistributed here. That covers the pre-implant MRI, the post-implant MRI, the CT, the
 CT/MRI overlay figure and `freesurfer.zip`, whose subject directory contains whole-head T1/orig/rawavg volumes. The
@@ -59,7 +99,36 @@ masks. We did not run an independent full-resolution identifiability review. The
 authors at https://zenodo.org/records/1201560. The same data are also archived at the Donders Repository
 (hdl:11633/di.dccn.DSC_3015000.00_734; Zenodo marks it as identical).
 
+## How to load
+
+`mne_bids.read_raw_bids` refuses epoched recordings, so read the BrainVision file directly and cut it into the
+26 epochs of 6502 samples (tone onset at sample 2000 of each epoch):
+
+```python
+import mne
+import numpy as np
+
+raw = mne.io.read_raw_brainvision(
+    "sub-UCI29/ieeg/sub-UCI29_task-tonedetection_ieeg.vhdr", preload=True)
+data = raw.get_data()                      # (152, 26 * 6502)
+epochs = data.reshape(152, 26, 6502).transpose(1, 0, 2)
+times = (np.arange(6502) - 2000) / raw.info["sfreq"]   # -0.4 ... 0.9002 s
+```
+
+The signal files are stored with git-annex on NEMAR; fetch them first (for example `git annex get sub-UCI29`).
+Electrode positions are in `sub-UCI29_space-ACPC_electrodes.tsv` (subject ACPC, mm).
+
 ## Licence and citation
 
 CC-BY-SA-4.0 (from the Zenodo record), so adaptations must be shared under the same licence. Please cite Stolk et al.
 (2018), doi:10.1038/s41596-018-0009-6, and the data record doi:10.5281/zenodo.1201560.
+
+## Source and provenance
+
+- Data record: Zenodo doi:10.5281/zenodo.1201560 (v1.0, published 2018-03-21; identical copy at the Donders
+  Repository, hdl:11633/di.dccn.DSC_3015000.00_734).
+- Article: Stolk et al. (2018) Nature Protocols 13:1699-1723, doi:10.1038/s41596-018-0009-6 (author manuscript
+  PMC6548463; preprint doi:10.1101/230912). Acquisition, implant and funding details above were read from the PMC
+  full text on 2026-10-06.
+- Packaging: `laneD_convert.py` (iEEG-NEMAR campaign); see `GeneratedBy` in `dataset_description.json` and
+  SHA-256 checksums in `sourcedata/sourcedata_provenance.json`.

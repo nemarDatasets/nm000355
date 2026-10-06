@@ -15,10 +15,17 @@
     "Robert T. Knight",
     "Robert Oostenveld"
   ],
+  "Acknowledgements": "Stolk et al. (2018), Acknowledgments: \"The authors thank the patient for participation and Christopher R. Holdgraf, Vinitha Rangarajan, Colin W. Hoy, Julia Kam, Ludovic Bellier, Randolph Helfrich, Richard Jimenez, Edden Gerber, Alejandro Blenkmann, Jamie Lubell, and Michael Pereira for fruitful discussions. The authors are also grateful to the present and former FieldTrip core developers as well as the greater FieldTrip community for contributing code, documentation and expertise that have made this protocol possible.\" Data record doi:10.5281/zenodo.1201560 (v1.0, 2018-03-21). BIDS packaging for NEMAR by Bruno Aristimunha's iEEG-NEMAR campaign.",
   "HowToAcknowledge": "Cite Stolk A, Griffin S, van der Meij R, et al. (2018) Integrated analysis of anatomical and electrophysiological human intracranial data. Nature Protocols 13:1699-1723, doi:10.1038/s41596-018-0009-6, and the data record doi:10.5281/zenodo.1201560. Share adaptations under CC-BY-SA-4.0.",
   "Funding": [
     "European Commission H2020 grant 641652 (ChildBrain)",
-    "European Commission H2020 grant 658868 (MUSIC)"
+    "European Commission H2020 grant 658868 (MUSIC)",
+    "NWO Rubicon grant 446-14-007 (A.S.)",
+    "European Union Marie Sklodowska-Curie Global Fellowship 658868 (A.S.)",
+    "NIMH R01 MH095984-03S1 (R.vd.M.)",
+    "NWO VIDI 864-14-011 (J-M.S.)",
+    "NINDS R37NS21135 (R.T.K.)",
+    "EC Marie Curie Actions H2020-MSCA-ITN-2014 (R.O.)"
   ],
   "EthicsApprovals": [
     "Office for the Protection of Human Subjects, University of California, Berkeley; the subject gave informed consent (as stated by the authors)"
@@ -28,7 +35,9 @@
     "https://doi.org/10.1038/s41596-018-0009-6",
     "https://doi.org/10.1101/230912",
     "https://www.fieldtriptoolbox.org/tutorial/intracranial/human_ecog/",
-    "https://hdl.handle.net/11633/di.dccn.DSC_3015000.00_734"
+    "https://hdl.handle.net/11633/di.dccn.DSC_3015000.00_734",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6548463/",
+    "https://www.fieldtriptoolbox.org"
   ],
   "Keywords": [
     "iEEG",
@@ -38,7 +47,11 @@
     "preprocessed",
     "derivative",
     "auditory target detection",
-    "FieldTrip"
+    "FieldTrip",
+    "intracranial EEG",
+    "electrocorticography",
+    "stereoelectroencephalography",
+    "epilepsy"
   ],
   "GeneratedBy": [
     {

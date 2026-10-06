@@ -2,6 +2,8 @@
   "TaskName": "tonedetection",
   "TaskDescription": "Auditory target detection: the patient pressed a button with the right hand when hearing a target tone. Segments are aligned to tone onset (trigger value 4 in the recording).",
   "InstitutionName": "University of California, Irvine Medical Center (recording site)",
+  "Manufacturer": "Nihon Kohden",
+  "ManufacturersModelName": "JE-120A",
   "SamplingFrequency": 5000.0,
   "PowerLineFrequency": 60,
   "SoftwareFilters": {
@@ -12,7 +14,12 @@
       "padding": "2 s, padtype = data"
     }
   },
-  "HardwareFilters": "n/a",
+  "HardwareFilters": {
+    "HighpassFilter": {
+      "CutoffFrequency": 0.01,
+      "Description": "Stolk et al. 2018, Materials: recordings 'analogfiltered above 0.01 Hz' (Nihon Kohden JE-120A)."
+    }
+  },
   "iEEGReference": "Not documented in the shared data. The signals are as imported from the recording before the protocol's re-montage steps (common average for grids, bipolar for depths, steps 41-42), which were NOT applied to these data.",
   "ECOGChannelCount": 96,
   "SEEGChannelCount": 56,
@@ -27,5 +34,6 @@
   "RecordingDuration": 33.8104,
   "iEEGGround": "n/a",
   "iEEGPlacementScheme": "6 bilateral depth electrodes (amygdala, hippocampal head, hippocampal tail), 1 right occipital depth, left parietal 64-contact grid and left temporal 32-contact grid",
+  "iEEGElectrodeGroups": "LPG: 64-contact cortical grid, left parietal coverage (Integra, 8 x 8, 10 mm spacing); LTG: 32-contact cortical grid, left temporal coverage (Integra, 4 x 8, 10 mm spacing); LAM, LHH, LTH, RAM, RHH, RTH: 8-contact linear depth electrodes targeting left/right amygdala, hippocampus head and hippocampus tail (Ad-Tech, 5 mm spacing); ROC: 8-contact linear depth electrode targeting right occipital cortex (Ad-Tech, 5 mm spacing). Source: Stolk et al. 2018, Materials, Neural recordings.",
   "ElectricalStimulation": false
 }
