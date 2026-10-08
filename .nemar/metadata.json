@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): authors' preprocessed ECoG+SEEG epochs",
-  "description": "A BIDS packaging of the authors' preprocessed intracranial EEG epochs from the FieldTrip human intracranial analysis protocol (Stolk et al., 2018). It contains 26 tone-locked epochs of 152 ECoG and SEEG channels sampled at 5000 Hz from one epilepsy patient (SubjectUCI29) performing an auditory target detection task. The data are derivative, with demeaning, 200 Hz low-pass and line-noise band-stop filtering already applied. Raw recordings were not released by the authors.",
-  "methods_description": "Recordings were acquired with a Nihon Kohden JE-120A amplifier at 5 kHz with an analog high-pass above 0.01 Hz, from 96 ECoG contacts (parietal and temporal grids) and 56 SEEG contacts on 7 depth leads. Trials were cut from -0.4 to 0.9 s around tone onset, demeaned, low-pass filtered at 200 Hz and band-stop filtered at 59-61, 119-121 and 179-181 Hz using FieldTrip ft_preprocessing.",
+  "description": "Preprocessed intracranial EEG (ECoG and SEEG) from one epilepsy patient (SubjectUCI29) performing an auditory target-detection task, released with the FieldTrip human intracranial analysis protocol of Stolk et al. (2018). The dataset contains 26 tone-locked epochs of 152 channels sampled at 5000 Hz, demeaned, low-pass filtered at 200 Hz and band-stop filtered at line-noise harmonics. Electrode positions in subject ACPC and MNI space are included. Raw recordings were not shared by the authors, so this is a derivative BIDS packaging.",
+  "methods_description": "Recordings were acquired with a Nihon Kohden JE-120A amplifier at 5 kHz with an analog high-pass above 0.01 Hz, from 96 ECoG contacts (parietal and temporal grids) and 56 SEEG depth contacts. The patient pressed a button on hearing a target tone. Trials were cut from -0.4 to 0.9 s around tone onset, demeaned, low-pass filtered at 200 Hz and band-stop filtered at 59-61, 119-121 and 179-181 Hz using FieldTrip ft_preprocessing.",
   "license": "CC-BY-SA-4.0",
   "dataset_type": "derivative",
   "authors": {
@@ -38,20 +38,20 @@
   },
   "keywords": [
     {
-      "term": "intracranial EEG"
-    },
-    {
       "term": "Electrocorticography",
       "subject_scheme": "MeSH",
       "value_uri": "http://id.nlm.nih.gov/mesh/D000069280"
     },
     {
-      "term": "stereoelectroencephalography"
-    },
-    {
       "term": "Epilepsy",
       "subject_scheme": "MeSH",
       "value_uri": "http://id.nlm.nih.gov/mesh/D004827"
+    },
+    {
+      "term": "intracranial EEG"
+    },
+    {
+      "term": "stereoelectroencephalography"
     },
     {
       "term": "auditory target detection"
@@ -94,17 +94,16 @@
     {
       "funder_name": "European Commission",
       "award_number": "641652",
-      "award_title": "ChildBrain (H2020)"
+      "award_title": "ChildBrain"
     },
     {
       "funder_name": "European Commission",
       "award_number": "658868",
-      "award_title": "MUSIC (H2020)"
+      "award_title": "MUSIC"
     },
     {
       "funder_name": "NWO",
-      "award_number": "446-14-007",
-      "award_title": "Rubicon"
+      "award_number": "446-14-007"
     },
     {
       "funder_name": "NIMH",
@@ -112,8 +111,7 @@
     },
     {
       "funder_name": "NWO",
-      "award_number": "864-14-011",
-      "award_title": "VIDI"
+      "award_number": "864-14-011"
     },
     {
       "funder_name": "NINDS",
@@ -140,5 +138,5 @@
     ".xlsx",
     ".yml"
   ],
-  "source_hash": "df6d8947ac98c167b0b3893d99eafe6fcde6b01913f330538e6be94001a6ebbf"
+  "source_hash": "35fceec12c01cc524d69faf80efeeacc3a78c5eb116ccf640b6346133e03da2a"
 }
