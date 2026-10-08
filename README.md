@@ -1,3 +1,5 @@
+[![DOI](https://img.shields.io/badge/DOI-10.82901%2Fnemar.nm000355-blue)](https://doi.org/10.82901/nemar.nm000355)
+
 # Stolk et al. 2018 FieldTrip iEEG protocol dataset (SubjectUCI29): the authors' preprocessed epochs
 
 ## Overview
