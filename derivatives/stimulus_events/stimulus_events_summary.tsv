@@ -1,0 +1,2 @@
+file	kind	n_epochs	samples_per_epoch	vmrk_segments	rows_before	exact_duplicates_removed	rows_to_derivative	rows_unmapped	rows_after
+sub-UCI29/ieeg/sub-UCI29_task-tonedetection_events.tsv	split	26	6502	26	52	0	26	0	26

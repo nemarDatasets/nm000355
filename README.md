@@ -134,3 +134,18 @@ CC-BY-SA-4.0 (from the Zenodo record), so adaptations must be shared under the s
   full text on 2026-10-06.
 - Packaging: `laneD_convert.py` (iEEG-NEMAR campaign); see `GeneratedBy` in `dataset_description.json` and
   SHA-256 checksums in `sourcedata/sourcedata_provenance.json`.
+
+## Events and epochs (18 Oct 2026)
+
+Each epoched data file stores its epochs back to back, each `EpochLength` long. `mne_bids.read_epochs_bids` cuts one epoch of `EpochLength` at EVERY row of `events.tsv`, so files whose `events.tsv` also held within-epoch events (or no row at all) could not be read (KeyError: the epoch rows have value n/a, and every tone row would start an extra epoch). Since 18 Oct 2026 the `events.tsv` of the 1 epoched files holds exactly its `epoch` rows, one per epoch at sample (k - 1) x round(`EpochLength` x sampling rate), unchanged; their `value` column was n/a on every row and was dropped (mne_bids builds no event id from n/a values). The number of epochs of every file comes from its data header (number of samples / samples per epoch) and agrees with the .vmrk `New Segment` markers where present (26 epochs in total).
+
+The other rows of the 1 files that had them (26 rows) are in `derivatives/stimulus_events/` under the same relative path (for example `derivatives/stimulus_events/sub-UCI29/ieeg/sub-UCI29_task-tonedetection_events.tsv`), unchanged: same columns, line text and order, `onset` and `sample` relative to the start of the recording. Only rows identical in every column to an earlier row were dropped (0 rows). 0 of them lie outside the recording or their epoch and are kept as delivered. Per-file counts: `derivatives/stimulus_events/stimulus_events_summary.tsv`; code: `code/fix-20261018_split_stimulus_events.py`. Signal files are unchanged.
+
+```python
+import mne_bids, pandas as pd
+epochs = mne_bids.read_epochs_bids(bids_path)        # one epoch per events.tsv row
+stim = pd.read_csv(root / 'derivatives' / 'stimulus_events' / events_relpath, sep='\t')
+n_per = round(epoch_length * sfreq)
+stim['epoch_index'] = stim['sample'] // n_per          # 0-based epoch
+stim['time_in_epoch'] = (stim['sample'] % n_per) / sfreq
+```

@@ -1,2 +1,7 @@
+1.0.1 2026-10-18
+  - events.tsv of the 1 epoched files: exactly one row per epoch (26 epochs; count from the data headers), so mne_bids.read_epochs_bids loads each file as its epochs (before: KeyError: the epoch rows have value n/a, and every tone row would start an extra epoch). The other 26 rows of 1 files moved unchanged to derivatives/stimulus_events/ (same paths; dataset_description.json, README.md, events JSON, per-file summary); 0 rows identical to an earlier row dropped. Code: code/fix-20261018_split_stimulus_events.py.
+  - README: section 'Events and epochs (18 Oct 2026)'.
+  - dataset_description.json: Version 1.0.0 -> 1.0.1.
+
 1.0.0 2026-10-06
   - Initial BIDS packaging of the authors' derivative release (no signal processing).

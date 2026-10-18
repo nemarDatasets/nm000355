@@ -1,0 +1,30 @@
+{
+    "Name": "nm000355 stimulus-level events (moved out of the epoch-defining events.tsv, 18 Oct 2026)",
+    "BIDSVersion": "1.10.0",
+    "DatasetType": "derivative",
+    "License": "CC-BY-SA-4.0",
+    "Authors": [
+        "Arjen Stolk",
+        "Sandon Griffin",
+        "Roemer van der Meij",
+        "Callum Dewar",
+        "Ignacio Saez",
+        "Jack J. Lin",
+        "Giovanni Piantoni",
+        "Jan-Mathijs Schoffelen",
+        "Robert T. Knight",
+        "Robert Oostenveld"
+    ],
+    "GeneratedBy": [
+        {
+            "Name": "nm000355 fix-20261018 events split",
+            "Description": "Within-epoch event rows of the epoched sub-*/*_events.tsv files of nm000355, moved here unchanged (same columns, line text and order; onset/sample relative to the start of the recording) after dropping rows identical in every column to an earlier row. The raw events.tsv now holds one row per epoch so that mne_bids.read_epochs_bids loads each file as its epochs. Code: ../../code/fix-20261018_split_stimulus_events.py; per-file counts: stimulus_events_summary.tsv."
+        }
+    ],
+    "SourceDatasets": [
+        {
+            "URL": "https://github.com/nemarDatasets/nm000355",
+            "Version": "1.0.0"
+        }
+    ]
+}
